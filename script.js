@@ -10,11 +10,28 @@ button.addEventListener("click",()=>{
     }
     else {
        let li = document.createElement("li");
-       let ion = document.createElement("ion-icon");
-       ion = ion.setAttribute('name',"checkmark-circle-outline");
+        let img = document.createElement("img");
+        img.src = "assestes/delete.svg";
         li.innerHTML = input.value;
+        li.appendChild(img);
        ul.appendChild(li);
-       ul.appendChild(ion);
+       input.value = "";
         
     }
 })
+const img = document.querySelector("img");
+
+
+ul.addEventListener("click",(e)=>{
+    if(e.target.tagName === "IMG"){
+        e.target.parentElement.remove();
+    }
+    else if(e.target.tagName === 'LI'){
+        e.target.classList.toggle("completed")
+        setTimeout(function(){
+            alert("good work")
+        },1000)
+    }
+}
+    
+)

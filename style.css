@@ -10,7 +10,8 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #0D0D0D;
+    background-color: #04071D
+    ;
     color: white;
     gap: 40px;
 }
@@ -18,8 +19,17 @@ h1 {
     font-size: 50px;
     color: #4EA8DE;
 }
-.container  {
+/* body img:first-of-type {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
+body img:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    top: 0;
+} */
+
 h1 span {
     color: #5E60CE;
 }
@@ -50,7 +60,7 @@ h1 span {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 900;
+    
     cursor: pointer;
     font-size: 20px;
     color: black;
@@ -58,29 +68,9 @@ h1 span {
     position: relative;
     background: none;
     border-radius: 10px;
-}
-.container div button::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    z-index: -99;
-    
-    background: #5E60CE;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.container div button::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: #4EA8DE;
-    position: absolute;
-   
-    z-index: -1;
-   transition: all .2s ease;
-    transform: scaleX(0);
-    transform-origin: center;
+    color:#fff ;
+    background: linear-gradient(103.4deg, #04071D 16.66%, #0C0E23 81.61%);
+    border: 1px solid #4EA8DE;
 }
 
 .container div button:active {
@@ -103,10 +93,34 @@ li {
     display: flex;
     width: 100%;
     align-items: center;
-    background-color: #333333;
+    background: linear-gradient(90deg, #161A31 3.4%, #06091F 100%);
+
     padding: 15px;
+    justify-content: space-between;
     border-radius: 10px;
     margin: 10px 0px;
+    transition: all .3s ease;
+    animation: li .4s ease ;
+    cursor: pointer;
+}
+@keyframes li {
+    0% {
+        transform: scaleX(0) translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1) translateY(0px);
+        opacity: 1;
+    }
+}
+li img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: #4ea7de42;
+    /* padding: 20px; */
+    border-radius: 50%;
+    
 }
 /* .tasks ion-icon:last-of-type {
     position: absolute;
@@ -126,3 +140,6 @@ li {
     margin-right: 10px;
     cursor: pointer;
 } */
+.completed {
+    text-decoration: line-through;
+}
